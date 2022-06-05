@@ -24,6 +24,22 @@
   <noscript>
     <div><img src="https://mc.yandex.ru/watch/41478434/1" style="position:absolute; left:-9999px;" alt="" /></div>
   </noscript>
+  <style>
+    .profilepicmobile{
+          display: none;
+        }
+    @media only screen and (max-width: 980px) {
+      .profilepicmobile{
+          display: block;
+          width: 80%;
+          margin: 0 auto;
+          border-radius: 10px;
+        }
+    }
+    
+    
+    
+  </style>
   <!-- ManyChat -->
   <!-- <script src="//widget.manychat.com/936925033180065.js" async="async"></script> -->
 </head>
@@ -50,6 +66,7 @@
           <button type="button" class="menu__mobile-button">
             <span><i class="fa fa-bars" aria-hidden="true"></i></span>
           </button>
+         
         </div>
       </div>
     </div>
@@ -86,6 +103,7 @@
           <img class="" src="assets/img/mmmm.jpeg" alt="avatar">
         </div>
         <div class="col-md-8">
+          <img class="profilepicmobile" src="assets/img/mmmm.jpeg" alt="avatar">
           <p class="personal-profile__name">Amran Muhammad_</p>
           <p class="personal-profile__work">Software Engineer</p>
           <div class="personal-profile__contacts">
