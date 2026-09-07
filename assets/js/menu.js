@@ -3,6 +3,10 @@
 //Anchors
 $(function(){
     $('a[href^="#"]').click(function(){
+        if ($(this).closest('.mobile-menu').length) {
+            return;
+        }
+
         var target = $(this).attr('href');
         $('html, body').animate({scrollTop: $(target).offset().top - 50}, 800);
         return false;
