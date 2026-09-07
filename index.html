@@ -12,7 +12,7 @@
   <title>Amran Muhammad | Software QA Engineer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/color.css">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link href="../../cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
@@ -28,21 +28,6 @@
   <noscript>
     <div><img src="https://mc.yandex.ru/watch/41478434/1" style="position:absolute; left:-9999px;" alt="" /></div>
   </noscript>
-  <style>
-    .profilepicmobile {
-      display: none;
-    }
-
-    @media only screen and (max-width: 980px) {
-      .profilepicmobile {
-        display: block;
-        width: min(320px, 80%);
-        margin: 0 auto 1.5rem;
-        border-radius: 20px;
-        box-shadow: 0 20px 40px rgba(2, 6, 23, 0.28);
-      }
-    }
-  </style>
   <!-- ManyChat -->
   <!-- <script src="//widget.manychat.com/936925033180065.js" async="async"></script> -->
 </head>
@@ -101,14 +86,13 @@
 
   <!--Header-->
   <!-- <header style="background-image: url(assets/img/rrr.jpeg)"> -->
-  <header style="background: black" id="contact">
+  <header id="contact">
     <div class="container">
       <div class="row personal-profile">
         <div class="col-md-4 personal-profile__avatar">
           <img class="" src="assets/img/amran-v1234.png" alt="Amran Muhammad portrait">
         </div>
         <div class="col-md-8">
-          <img class="profilepicmobile" src="assets/img/amran-v1234.png" alt="Amran Muhammad portrait">
           <p class="personal-profile__name">Amran Muhammad_</p>
           <p class="personal-profile__work">Software QA Engineer</p>
           <div class="hero-badges">
@@ -495,6 +479,35 @@
     </div>
 
     <div class="portfolio-cards">
+      <div class="row project-card project-card--aspire" data-toggle="modal" data-target="#hostleModal" data-portfolio-tag="web-sites">
+        <div class="col-md-6 col-lg-5 project-card__img project-card__img--aspire" aria-hidden="true">
+          <div class="aspire-preview">
+            <div class="aspire-preview__nav">
+              <span class="aspire-preview__brand">Aspire Academy</span>
+              <span>About Aspire</span>
+              <span>Sign In</span>
+            </div>
+            <div class="aspire-preview__hero">
+              <span>A-Level &amp; GCSE Question Banks</span>
+              <strong>Master Every Subject.<br>Ace Every Exam.</strong>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-7 project-card__info">
+          <span class="project-card__meta">EdTech Platform</span>
+          <h3 class="project-card__title">Aspire Learning</h3>
+          <p class="project-card__description">
+            Aspire Learning helps students prepare with exam-board aligned question banks, instant marking, and progress tracking.
+          </p>
+          <p class="project-card__stack">Used stack:</p>
+          <ul class="tags">
+            <li>Education</li>
+            <li>Question Bank</li>
+            <li>Progress Tracking</li>
+          </ul>
+          <a href="https://aspirelearning.uk" class="project-card__link" target="_blank" rel="noopener">Aspire Learning</a>
+        </div>
+      </div>
       <div class="row project-card" data-toggle="modal" data-target="#hostleModal" data-portfolio-tag="web-sites">
         <div class="col-md-6 col-lg-5 project-card__img">
           <img class="" src="assets/img/ezycourse/ezy.png" alt="project-img">
