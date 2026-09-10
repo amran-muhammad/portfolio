@@ -710,6 +710,91 @@ header::after {
   transition: transform 0.5s ease, filter 0.5s ease;
 }
 
+.project-card__img--reelvault {
+  background: #08090a;
+}
+
+.reelvault-preview {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  padding: 18px;
+  color: #f4f4f1;
+  font-family: var(--sans);
+  background: linear-gradient(135deg, #090a0b 0%, #141416 58%, #2a170c 100%);
+  transform: scale(1.01);
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .reelvault-preview {
+  transform: scale(1.06);
+}
+
+.reelvault-preview__nav,
+.reelvault-preview__hero span,
+.reelvault-preview__hero small {
+  font-family: monospace;
+  font-size: 0.48rem;
+  letter-spacing: 0.08em;
+}
+
+.reelvault-preview__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #c7c7c3;
+}
+
+.reelvault-preview__nav span {
+  color: #f19b25;
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.reelvault-preview__hero {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 52px;
+}
+
+.reelvault-preview__hero small {
+  color: #f19b25;
+}
+
+.reelvault-preview__hero strong {
+  max-width: 240px;
+  font-size: clamp(1.6rem, 4vw, 3.4rem);
+  letter-spacing: -0.08em;
+  line-height: 0.82;
+}
+
+.reelvault-preview__hero span {
+  color: #bebeb8;
+}
+
+.reelvault-preview__shelf {
+  position: absolute;
+  right: 18px;
+  bottom: 22px;
+  left: 18px;
+  display: flex;
+  gap: 7px;
+}
+
+.reelvault-preview__shelf i {
+  display: block;
+  flex: 1;
+  height: 68px;
+  border: 1px solid rgba(241, 155, 37, 0.35);
+  background: linear-gradient(145deg, #55534b, #18191a 62%);
+}
+
+.reelvault-preview__shelf i:nth-child(2) { background: linear-gradient(145deg, #84746c, #202020 62%); }
+.reelvault-preview__shelf i:nth-child(3) { background: linear-gradient(145deg, #31554c, #111817 62%); }
+.reelvault-preview__shelf i:nth-child(4) { background: linear-gradient(145deg, #6e4c2e, #1c1511 62%); }
+
 .project-card:hover .project-card__img img {
   filter: saturate(0.92) contrast(1.08) sepia(0.06);
   transform: scale(1.06);

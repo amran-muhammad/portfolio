@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Simple Live is a focused, host-controlled video room demo.">
+  <title>Simple Live | Private video rooms</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/simple-live.css">
+</head>
+<body>
+  <main class="app-shell">
+    <nav class="topbar" aria-label="Simple Live navigation">
+      <a class="brand" href="index.html" aria-label="Back to portfolio">simple<span>live</span></a>
+      <span class="topbar__note"><i></i>Private rooms, by design</span>
+      <a class="back-link" href="index.html">Back to portfolio <span aria-hidden="true">↗</span></a>
+    </nav>
+
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro__copy">
+        <p class="eyebrow">A quieter way to go live</p>
+        <h1 id="page-title">Open the room.<br><em>Choose who<br>enters.</em></h1>
+        <p class="intro__description">Start a real-time video room and personally approve every person who joins. No public feed. No surprise audience.</p>
+      </div>
+      <div class="intro__mark" aria-hidden="true"><span>SL</span><small>01 — 24</small></div>
+    </section>
+
+    <section class="room-options" aria-label="Room options">
+      <article class="option option--host">
+        <div class="option__number">01 <span>/ host</span></div>
+        <div class="option__body">
+          <p class="option__kicker">You are in control</p>
+          <h2>Start a live room</h2>
+          <p>Turn on your camera, share one link, and keep the door in your hands.</p>
+        </div>
+        <button class="button button--lime" id="start-room" type="button">Start live <span aria-hidden="true">↗</span></button>
+      </article>
+
+      <article class="option option--guest">
+        <div class="option__number">02 <span>/ guest</span></div>
+        <div class="option__body">
+          <p class="option__kicker">You have an invitation</p>
+          <h2>Join by invitation</h2>
+          <p>Have a room code? Ask to enter. The host decides when you come through.</p>
+        </div>
+        <form class="join-form" id="join-form">
+          <label for="room-code">Room code</label>
+          <input id="room-code" name="room-code" type="text" placeholder="A1B2C3" maxlength="6" autocomplete="off" required>
+          <label for="guest-name">Your name</label>
+          <input id="guest-name" name="guest-name" type="text" placeholder="How should we call you?" maxlength="32" autocomplete="name" required>
+          <button class="button button--dark" type="submit">Request entry</button>
+          <p class="form-message" id="join-message" role="status" aria-live="polite"></p>
+        </form>
+      </article>
+    </section>
+
+    <section class="room-view" id="room-view" aria-live="polite" hidden>
+      <div class="room-view__header">
+        <div><p class="eyebrow">Your room is ready</p><h2 id="room-title">Waiting room</h2></div>
+        <button class="icon-button" id="copy-room" type="button" title="Copy room code">Copy code <span aria-hidden="true">⧉</span></button>
+      </div>
+      <div class="video-stage">
+        <div class="video-tile video-tile--local">
+          <video id="local-video" autoplay muted playsinline></video>
+          <div class="video-tile__placeholder" id="video-placeholder"><span id="user-initial">Y</span><small>Your preview</small></div>
+          <span class="video-tile__label" id="local-label">You</span>
+        </div>
+        <div class="video-tile video-tile--empty"><span>Waiting for guests</span><small>Share the room code to invite someone in.</small></div>
+      </div>
+      <div class="room-controls">
+        <button class="control-button" id="toggle-mic" type="button"><span aria-hidden="true">◉</span> Mic on</button>
+        <button class="control-button" id="toggle-camera" type="button"><span aria-hidden="true">□</span> Camera</button>
+        <button class="control-button control-button--leave" id="leave-room" type="button">Leave room</button>
+      </div>
+      <p class="demo-note">Demo mode: the room and device preview are local to this browser. Add WebSocket signaling to connect real guests.</p>
+    </section>
+  </main>
+  <script src="assets/js/simple-live.js"></script>
+</body>
+</html>
