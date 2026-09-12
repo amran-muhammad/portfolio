@@ -1,30 +1,31 @@
 'use strict';
 
-//Filter project cards
-var previousClickedMenuLink = undefined;
-$('.portfolio-menu').on('click', 'a', function(event){
-    event.preventDefault();
+var activeProjectCategory = 'all';
 
-    if (previousClickedMenuLink) {
-        previousClickedMenuLink.removeClass('portfolio-menu__link--active');
-    }
-    var link = $(event.target);
-    link.addClass('portfolio-menu__link--active');
-    previousClickedMenuLink = link;
+function filterProjects() {
+    var query = $('#projectSearch').val().toLowerCase().trim();
+    var visibleCount = 0;
 
-    var targetTag = $(event.target).data('portfolio-target-tag');
-    var portfolioItems = $('.portfolio-cards').children();
+    $('.project-card').each(function() {
+        var card = $(this);
+        var matchesCategory = activeProjectCategory === 'all' || card.data('portfolio-tag') === activeProjectCategory;
+        var matchesQuery = !query || card.text().toLowerCase().indexOf(query) !== -1;
+        var isVisible = matchesCategory && matchesQuery;
 
-    if (targetTag === 'all') {
-        portfolioItems.fadeIn({duration: 500});
-    } else {
-        portfolioItems.hide();
-    }
-
-    portfolioItems.each(function(index, value){
-        var item = $(value);
-        if (item.data('portfolio-tag') === targetTag) {
-            item.fadeIn({duration: 500});
+        card.prop('hidden', !isVisible);
+        if (isVisible) {
+            visibleCount += 1;
         }
     });
+
+    $('#projectCount').text(visibleCount);
+}
+
+$('.portfolio-menu').on('click', 'button', function() {
+    $('.portfolio-menu__link').removeClass('portfolio-menu__link--active');
+    $(this).addClass('portfolio-menu__link--active');
+    activeProjectCategory = $(this).data('portfolio-target-tag');
+    filterProjects();
 });
+
+$('#projectSearch').on('input', filterProjects);

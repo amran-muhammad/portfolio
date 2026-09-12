@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 
@@ -9,10 +9,17 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>Amran Muhammad | Software QA Engineer</title>
+  <title>Amran Muhammad | Software Engineer</title>
+  <script>
+    try {
+      document.documentElement.setAttribute('data-theme', localStorage.getItem('site-theme') || 'dark');
+    } catch (error) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/color.css">
   <link rel="stylesheet" href="assets/css/custom.css">
   <link href="../../cdn.materialdesignicons.com/2.0.46/css/materialdesignicons.min.css" rel="stylesheet">
@@ -41,13 +48,20 @@
         <div class="menu__wrapper d-none d-lg-block col-md-12">
           <nav class="">
             <ul>
+              <li><a href="#portfolio">Portfolio</a> </li>
               <li><a href="#hello">Hello</a></li>
               <li><a href="#resume">Resume</a></li>
-
-              <li><a href="#portfolio">Portfolio</a> </li>
               <!-- <li><a href="#testimonials">testimonials</a></li> -->
               <!-- <li><a href="#blog">blog</a></li> -->
                             <li><a href="#contact">Contact</a></li>
+              <li class="site-preferences" aria-label="Display preferences">
+                <button class="preference-button language-toggle" type="button" aria-label="বাংলায় দেখুন" title="Language">
+                  <i class="fa fa-language" aria-hidden="true"></i><span class="language-toggle__label">বাংলা</span>
+                </button>
+                <button class="preference-button theme-toggle" type="button" aria-label="Switch to light mode" title="Color theme">
+                  <i class="fa fa-sun-o" aria-hidden="true"></i>
+                </button>
+              </li>
               <!-- <li><a href="https://brand.site/EasyShop/contact" target="_blank">Contact</a></li> -->
             </ul>
           </nav>
@@ -71,12 +85,20 @@
       </div>
       <nav class="mobile-menu__wrapper">
         <ul>
+          <li><a href="#portfolio">Portfolio</a></li>
           <li><a href="#hello">Hello</a></li>
           <li><a href="#resume">Resume</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
           <!-- <li><a href="#testimonials">testimonials</a></li> -->
           <!-- <li><a href="#blog">blog</a></li> -->
                     <li><a href="#contact">Contact</a></li>
+          <li class="site-preferences" aria-label="Display preferences">
+            <button class="preference-button language-toggle" type="button" aria-label="বাংলায় দেখুন">
+              <i class="fa fa-language" aria-hidden="true"></i><span class="language-toggle__label">বাংলা</span>
+            </button>
+            <button class="preference-button theme-toggle" type="button" aria-label="Switch to light mode">
+              <i class="fa fa-sun-o" aria-hidden="true"></i>
+            </button>
+          </li>
           <!-- <li><a href="https://brand.site/EasyShop/contact" target="_blank">Contact</a></li> -->
         </ul>
       </nav>
@@ -472,14 +494,70 @@
 
   <!--Portfolio-->
   <section id="portfolio" class="container section">
-    <div class="row">
-      <div class="col-md-12">
-        <h2 id="portfolio_header" class="section__title">My projects_</h2>
+    <div class="portfolio-heading">
+      <div class="portfolio-heading__copy">
+        <span class="portfolio-heading__eyebrow">Product marketplace · 10 live builds</span>
+        <h2 id="portfolio_header" class="section__title">Choose what your business needs_</h2>
+        <p>Explore production-ready ideas across SaaS, commerce, and business tools. Every project is available to try, and every solution can be adapted to your workflow.</p>
       </div>
+      <a href="mailto:amran8258@gmail.com?subject=I%20want%20a%20project%20like%20one%20in%20your%20portfolio" class="portfolio-heading__cta">
+        <span>Have a project in mind?</span>
+        <strong>Request a custom build <i class="fa fa-arrow-right" aria-hidden="true"></i></strong>
+      </a>
+    </div>
+
+    <div class="portfolio-toolbar" aria-label="Filter projects">
+      <label class="portfolio-search" for="projectSearch">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <input id="projectSearch" type="search" placeholder="Search projects or technology" autocomplete="off">
+      </label>
+      <nav class="portfolio-menu" aria-label="Project categories">
+        <button class="portfolio-menu__link portfolio-menu__link--active" type="button" data-portfolio-target-tag="all">All</button>
+        <button class="portfolio-menu__link" type="button" data-portfolio-target-tag="saas">SaaS</button>
+        <button class="portfolio-menu__link" type="button" data-portfolio-target-tag="tools">Tools</button>
+        <button class="portfolio-menu__link" type="button" data-portfolio-target-tag="experiences">Experiences</button>
+        <button class="portfolio-menu__link" type="button" data-portfolio-target-tag="commerce">Commerce</button>
+      </nav>
+    </div>
+    <div class="portfolio-results" aria-live="polite">
+      <span><strong id="projectCount">10</strong> projects available</span>
+      <span class="portfolio-results__status"><i></i> Available for new work</span>
     </div>
 
     <div class="portfolio-cards">
-      <div class="row project-card project-card--reelvault" data-toggle="modal" data-target="#hostleModal" data-portfolio-tag="web-sites">
+      <div class="row project-card project-card--amrantv" data-portfolio-tag="experiences">
+        <div class="col-md-6 col-lg-5 project-card__img project-card__img--amrantv" aria-hidden="true">
+          <div class="amrantv-preview">
+            <aside class="amrantv-preview__sidebar">
+              <strong><i class="fa fa-television"></i> Amran TV</strong>
+              <span>Search channels...</span>
+              <span>Bangladesh</span>
+              <span>Sports</span>
+              <b>T Sports</b>
+            </aside>
+            <div class="amrantv-preview__player">
+              <span class="amrantv-preview__score">ESP &nbsp; 0 - 0 &nbsp; GER</span>
+              <i class="amrantv-preview__field"></i>
+              <small>LIVE</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-7 project-card__info">
+          <span class="project-card__meta">Global Live TV</span>
+          <h3 class="project-card__title">Amran TV</h3>
+          <p class="project-card__description">
+            Browse and watch live television channels from different countries with fast search, country and category filters, and an immersive full-screen player.
+          </p>
+          <p class="project-card__stack">Product features:</p>
+          <ul class="tags">
+            <li>Live Streaming</li>
+            <li>Global Channels</li>
+            <li>Responsive UI</li>
+          </ul>
+          <a href="https://amran-muhammad.github.io/amrantv/" class="project-card__link" target="_blank" rel="noopener">Open Amran TV</a>
+        </div>
+      </div>
+      <div class="row project-card project-card--reelvault" data-portfolio-tag="experiences">
         <div class="col-md-6 col-lg-5 project-card__img project-card__img--reelvault" aria-hidden="true">
           <div class="reelvault-preview">
             <div class="reelvault-preview__nav"><span>◉ REELVAULT</span><small>HOME &nbsp; HORROR &nbsp; SCI-FI &nbsp; COMEDY</small></div>
@@ -502,7 +580,7 @@
           <a href="https://amran-muhammad.github.io/reelvault/" class="project-card__link" target="_blank" rel="noopener">Open ReelVault</a>
         </div>
       </div>
-      <div class="row project-card project-card--simple-live" data-toggle="modal" data-target="#hostleModal" data-portfolio-tag="web-sites">
+      <div class="row project-card project-card--simple-live" data-portfolio-tag="experiences">
         <div class="col-md-6 col-lg-5 project-card__img project-card__img--simple-live" aria-hidden="true">
           <div class="simple-live-preview">
             <div class="simple-live-preview__topline">
@@ -530,7 +608,7 @@
           <a href="https://simplelive.onrender.com/" class="project-card__link" target="_blank" rel="noopener">Open Simple Live</a>
         </div>
       </div>
-      <div class="row project-card project-card--aspire" data-toggle="modal" data-target="#hostleModal" data-portfolio-tag="web-sites">
+      <div class="row project-card project-card--aspire" data-portfolio-tag="saas">
         <div class="col-md-6 col-lg-5 project-card__img project-card__img--aspire" aria-hidden="true">
           <div class="aspire-preview">
             <div class="aspire-preview__nav">
@@ -559,7 +637,7 @@
           <a href="https://aspirelearning.uk" class="project-card__link" target="_blank" rel="noopener">Aspire Learning</a>
         </div>
       </div>
-      <div class="row project-card" data-toggle="modal" data-target="#hostleModal" data-portfolio-tag="web-sites">
+      <div class="row project-card" data-portfolio-tag="saas">
         <div class="col-md-6 col-lg-5 project-card__img">
           <img class="" src="assets/img/ezycourse/ezy.png" alt="project-img">
         </div>
@@ -582,7 +660,7 @@
             anything</a>
         </div>
       </div>
-      <div class="row project-card" data-toggle="modal" data-target="#hostleModal" data-portfolio-tag="web-sites">
+      <div class="row project-card" data-portfolio-tag="saas">
         <div class="col-md-6 col-lg-5 project-card__img">
           <img class="" src="assets/img/tenrol/ten3.png" alt="project-img">
         </div>
@@ -600,7 +678,7 @@
           <a href="https://tenrol.com/" class="project-card__link">Tenrol - The future of hiring</a>
         </div>
       </div>
-      <div class="row project-card" data-toggle="modal" data-target="#hostleModal" data-portfolio-tag="web-sites">
+      <div class="row project-card" data-portfolio-tag="tools">
         <div class="col-md-6 col-lg-5 project-card__img">
           <img class="" src="assets/img/imageeditor/mainimg.JPG" alt="project-img">
         </div>
@@ -621,7 +699,7 @@
           <a href="https://imageditor-tpde.vercel.app/" class="project-card__link">Easy Image Editor</a>
         </div>
       </div>
-      <div class="row project-card" data-toggle="modal" data-target="#hostleModal" data-portfolio-tag="web-sites">
+      <div class="row project-card" data-portfolio-tag="tools">
         <div class="col-md-6 col-lg-5 project-card__img">
           <img class="" src="assets/img/voice2text/mainimg.JPG" alt="project-img">
         </div>
@@ -644,7 +722,7 @@
         </div>
       </div>
      
-      <div class="row project-card" data-toggle="modal" data-target="#hostleModal" data-portfolio-tag="web-sites">
+      <div class="row project-card" data-portfolio-tag="tools">
         <div class="col-md-6 col-lg-5 project-card__img">
           <img class="" src="assets/img/invoice/mainimg.JPG" alt="project-img">
         </div>
@@ -666,7 +744,7 @@
         </div>
       </div>
   
-      <div class="row project-card" data-toggle="modal" data-target="#hostleModal" data-portfolio-tag="web-sites">
+      <div class="row project-card" data-portfolio-tag="commerce">
         <div class="col-md-6 col-lg-5 project-card__img">
           <img class="" src="assets/img/bah1.png" alt="project-img">
         </div>
@@ -711,6 +789,7 @@
   </section>
 
   <script src="assets/js/jquery-2.2.4.min.js"></script>
+  <script src="assets/js/preferences.js"></script>
   <script src="assets/js/popper.min.js"></script>
   <script src="assets/js/bootstrap.min.js"></script>
   <script src="assets/js/menu.js"></script>

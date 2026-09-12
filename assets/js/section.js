@@ -1,5 +1,12 @@
 'use strict';
 
+var portfolioSection = document.getElementById('portfolio');
+var pageHeader = document.querySelector('header');
+
+if (portfolioSection && pageHeader) {
+    pageHeader.insertAdjacentElement('afterend', portfolioSection);
+}
+
 //Animate headers of .section
 var hideHeader = function(header) {
     header.css('text-indent', '-9999px');
